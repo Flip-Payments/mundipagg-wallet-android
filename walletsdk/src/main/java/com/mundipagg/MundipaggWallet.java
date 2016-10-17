@@ -3,7 +3,6 @@ package com.mundipagg;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.util.Log;
 
 import static android.content.pm.PackageManager.GET_META_DATA;
 
@@ -17,8 +16,6 @@ public class MundipaggWallet {
 
         // configure mundipagg account
         MundipaggAccount.getInstance().setAccessToken(getAccessToken(context));
-
-        Log.e("MundipaggAccount", MundipaggAccount.getInstance().toString());
     }
 
     private static String getAccessToken(Context context) {

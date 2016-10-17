@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getString(R.string.msg_hello_world);
             }
         });
     }
