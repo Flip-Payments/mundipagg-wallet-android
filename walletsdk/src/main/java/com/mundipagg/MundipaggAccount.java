@@ -10,9 +10,6 @@ public class MundipaggAccount {
 
     private static MundipaggAccount ourInstance = new MundipaggAccount();
 
-    /**
-     *
-     * */
     public static MundipaggAccount getInstance() {
         return ourInstance;
     }

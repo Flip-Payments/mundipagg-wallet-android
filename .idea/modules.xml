@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/WallterDemo.iml" filepath="$PROJECT_DIR$/WallterDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mundipagg-wallet-android.iml" filepath="$PROJECT_DIR$/mundipagg-wallet-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/walletsdk/walletsdk.iml" filepath="$PROJECT_DIR$/walletsdk/walletsdk.iml" />
     </modules>
   </component>
