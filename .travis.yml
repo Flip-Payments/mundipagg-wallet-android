@@ -10,5 +10,3 @@ android:
 
 notifications:
   slack: dlpflip:6Gq5QyAcmxmNG84ERa72wXst
-    on_success: always
-    on_failure: always
