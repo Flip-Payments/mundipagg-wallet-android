@@ -14,3 +14,8 @@ notifications:
 
 script:
     - chmod +x ./gradlew
+
+branches:
+  only:
+  - master
+  - development
