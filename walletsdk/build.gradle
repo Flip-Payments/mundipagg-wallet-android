@@ -37,6 +37,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'commons-codec:commons-codec:1.5'
 
+    // REST integration
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+
     testCompile 'junit:junit:4.12'
 }
 
