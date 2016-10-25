@@ -12,9 +12,3 @@ notifications:
   slack: dlpflip:6Gq5QyAcmxmNG84ERa72wXst
     on_success: always
     on_failure: always
-
-jdk:
-  - oraclejdk8
-
-script:
-  - ./gradlew clean check
