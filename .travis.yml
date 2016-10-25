@@ -5,8 +5,12 @@ android:
     - tools
     - platform-tools
     - build-tools-24.0.0
-    - extra-android-m2repository
     - android-24
+    - extra-android-support
+    - extra-android-m2repository
 
 notifications:
   slack: dlpflip:6Gq5QyAcmxmNG84ERa72wXst
+
+script:
+    - chmod +x ./gradlew
