@@ -8,6 +8,11 @@ android:
     - extra-android-m2repository
     - android-24
 
+notifications:
+  slack: dlpflip:6Gq5QyAcmxmNG84ERa72wXst
+    on_success: always
+    on_failure: always
+
 jdk:
   - oraclejdk8
 
