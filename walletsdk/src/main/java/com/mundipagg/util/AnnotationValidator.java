@@ -13,12 +13,18 @@ public class AnnotationValidator {
 
     public boolean cantBeNull(Object object) {
 
+        boolean hasAnnotation = false;
+        boolean notNull       = true;
+
         try {
 
             Method[] methods = object.getClass().getMethods();
             for (Method method : methods)
-                if (method.isAnnotationPresent(CantBeNull.class))
-                    return method.invoke(object) != null;
+                if (method.isAnnotationPresent(CantBeNull.class)) {
+                    hasAnnotation = true;
+                    if (method.invoke(object) == null)
+                        notNull = false;
+                }
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -28,7 +34,7 @@ public class AnnotationValidator {
             return false;
         }
 
-        return true;
+        return hasAnnotation && notNull;
     }
 
 }

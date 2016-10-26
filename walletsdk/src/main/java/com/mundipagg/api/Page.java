@@ -8,19 +8,19 @@ import com.google.gson.annotations.SerializedName;
 
 public class Page {
 
-    @SerializedName("total_items")  private int totalItems;
-    @SerializedName("current_page") private int currentPage;
-    @SerializedName("total_pages")  private int totalPages;
+    @SerializedName("total_items")  private Integer totalItems;
+    @SerializedName("current_page") private Integer currentPage;
+    @SerializedName("total_pages")  private Integer totalPages;
 
-    public int getTotalItems() {
+    public Integer getTotalItems() {
         return totalItems;
     }
 
-    public int getCurrentPage() {
+    public Integer getCurrentPage() {
         return currentPage;
     }
 
-    public int getTotalPages() {
+    public Integer getTotalPages() {
         return totalPages;
     }
 }
