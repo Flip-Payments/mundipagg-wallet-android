@@ -18,7 +18,7 @@ public class CreditCard {
     @SerializedName("status")           private String status;
     @SerializedName("created_at")       private String createdAt;
     @SerializedName("updated_at")       private String updatedAt;
-    @SerializedName("billing_address")  private String billingAddress;
+    @SerializedName("billing_address")  private BillingAddress billingAddress;
 
     public String getId() {
         return id;
@@ -100,11 +100,11 @@ public class CreditCard {
         this.updatedAt = updatedAt;
     }
 
-    public String getBillingAddress() {
+    public BillingAddress getBillingAddress() {
         return billingAddress;
     }
 
-    public void setBillingAddress(String billingAddress) {
+    public void setBillingAddress(BillingAddress billingAddress) {
         this.billingAddress = billingAddress;
     }
 }

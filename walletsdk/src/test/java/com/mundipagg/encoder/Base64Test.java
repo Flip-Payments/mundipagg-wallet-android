@@ -1,7 +1,5 @@
 package com.mundipagg.encoder;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -18,7 +16,7 @@ public class Base64Test {
         String textEncoded = new Base64().encode(textToEncode);
         String outputEncoded = "c2tfdGVzdF9BMGJrd2J2RkUydU9sV1lFOg==";
 
-        Assert.assertEquals(outputEncoded, textEncoded);
+        assertEquals(outputEncoded, textEncoded);
     }
 
     @Test
@@ -28,7 +26,7 @@ public class Base64Test {
         String textEncoded = new Base64().encode(textToEncode);
         String outputEncoded = "c2tfdGVzdF9BMGJrd2J2RkUydU9sV1lFOg==";
 
-        Assert.assertEquals(outputEncoded, textEncoded);
+        assertNotSame(outputEncoded, textEncoded);
     }
 
 }
