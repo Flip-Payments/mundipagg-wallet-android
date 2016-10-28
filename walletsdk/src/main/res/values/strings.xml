@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WalletSDK</string>
+    <string name="msg_loading_cards">Carregando os cartões..</string>
 </resources>
