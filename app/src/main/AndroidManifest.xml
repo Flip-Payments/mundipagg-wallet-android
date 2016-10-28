@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -24,6 +24,10 @@
         <meta-data
             android:name="MundipaggAccount"
             android:value="e10d4b4a-a994-498b-99fd-29fb6587f1ef" />
+
+        <activity
+            android:label="@string/list_card"
+            android:name=".activities.ListCreditCardsActivity" />
     </application>
 
 </manifest>

@@ -4,6 +4,8 @@ import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
+import retrofit2.http.Path;
 
 /**
  * Created by JGabrielFreitas on 27/10/16.
@@ -11,7 +13,8 @@ import retrofit2.http.GET;
 
 public interface CreditCardService {
 
+    @Headers("Authorization: Basic c2tfdGVzdF9BMGJrd2J2RkUydU9sV1lFOg==")
     @GET("core/v1.0/customers/{CUSTOMER_ID}/credit_cards")
-    Call<CreditCardListResponse> getCreditCards();
+    Call<CreditCardListResponse> getCreditCards(@Path("CUSTOMER_ID") String customerId);
 
 }

@@ -42,7 +42,7 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
 
     private void executeFeedback() {
 
-        if (workInBackground == false && context != null)
+        if (!workInBackground && context != null)
             dialog = ProgressDialog.show(context, dialogTitle, dialogMessage, false, false);
     }
 

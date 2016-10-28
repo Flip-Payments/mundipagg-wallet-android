@@ -22,6 +22,8 @@ public class CreditCardServiceLayer extends ServiceLayer {
 
     public void getCreditCards(CreditCardListCallbackInterface callbackInterface) {
 
+        String customerId = "cus_G2gE9gdipSGalVYJ";
+
         RetrofitConsumer<CreditCardListResponse> retrofitConsumer = new RetrofitConsumer<>(context);
         CreditCardService service = retrofitConsumer.getRetrofit().create(CreditCardService.class);
 
@@ -30,7 +32,7 @@ public class CreditCardServiceLayer extends ServiceLayer {
             retrofitConsumer.setWorkInBackground(isWorkInBackground());
         }
 
-        retrofitConsumer.setExecutable(service.getCreditCards());
+        retrofitConsumer.setExecutable(service.getCreditCards(customerId));
         retrofitConsumer.setRetrofitCallback(callbackInterface);
         retrofitConsumer.run();
     }
