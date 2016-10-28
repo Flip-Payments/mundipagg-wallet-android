@@ -3,7 +3,9 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
 // This is the library version used when deploying the artifact
-version = "0.0.2"
+version = "0.0.3"
+
+// ./gradlew bintrayUpload
 
 android {
     compileSdkVersion 24
