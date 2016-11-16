@@ -10,13 +10,4 @@ import retrofit2.Response;
  */
 
 public interface CreditCardListCallback extends RetrofitCallback<CreditCardListResponse> {
-
-    @Override
-    void onSuccess(CreditCardListResponse response);
-
-    @Override
-    void responseServerError(CreditCardListResponse object, Response<CreditCardListResponse> response);
-
-    @Override
-    void onError(Throwable t);
 }

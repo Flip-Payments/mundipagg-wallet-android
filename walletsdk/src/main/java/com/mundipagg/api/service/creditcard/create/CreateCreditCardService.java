@@ -1,6 +1,7 @@
 package com.mundipagg.api.service.creditcard.create;
 
 import com.mundipagg.api.creditcard.NewCreditCard;
+import com.mundipagg.api.response.creditcard.create.CreateCreditCardResponse;
 import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
 
 import retrofit2.Call;
@@ -17,6 +18,6 @@ public interface CreateCreditCardService {
 
     @Headers("Authorization: Basic c2tfdGVzdF9BMGJrd2J2RkUydU9sV1lFOg==")
     @POST("core/v1.0/customers/{CUSTOMER_ID}/credit_cards")
-    Call<CreditCardListResponse> create(@Path("CUSTOMER_ID") String customerId, @Body NewCreditCard newCreditCard);
+    Call<CreateCreditCardResponse> create(@Path("CUSTOMER_ID") String customerId, @Body NewCreditCard newCreditCard);
 
 }

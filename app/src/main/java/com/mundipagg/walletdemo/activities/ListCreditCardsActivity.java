@@ -29,7 +29,7 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
     @Override
     protected void modifyViews() {
         super.modifyViews();
-        new CreditCardServiceLayer(this).getCreditCards(this);
+        new CreditCardServiceLayer(this).getAllCreditCards(this);
     }
 
     @Override
@@ -45,11 +45,11 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
 
     @Override
     public void responseServerError(CreditCardListResponse object, Response<CreditCardListResponse> response) {
-        makeText(this, "CLIENT ERROR", LENGTH_SHORT).show();
+        toast("CLIENT ERROR");
     }
 
     @Override
     public void onError(Throwable t) {
-        makeText(this, "OH NO, ERROR...!!", LENGTH_SHORT).show();
+        toast("OH NO, ERROR...!!");
     }
 }

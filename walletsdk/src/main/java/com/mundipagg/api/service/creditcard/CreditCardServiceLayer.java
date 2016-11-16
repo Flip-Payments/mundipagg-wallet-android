@@ -6,6 +6,7 @@ import com.mundipagg.R;
 import com.mundipagg.api.RetrofitConsumer;
 import com.mundipagg.api.ServiceLayer;
 import com.mundipagg.api.creditcard.NewCreditCard;
+import com.mundipagg.api.response.creditcard.create.CreateCreditCardResponse;
 import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
 import com.mundipagg.api.service.creditcard.create.CreateCreditCardCallback;
 import com.mundipagg.api.service.creditcard.create.CreateCreditCardService;
@@ -45,7 +46,7 @@ public class CreditCardServiceLayer extends ServiceLayer {
 
     public void create(NewCreditCard newCreditCard, CreateCreditCardCallback callbackInterface) {
 
-        RetrofitConsumer<CreditCardListResponse> retrofitConsumer = new RetrofitConsumer<>(context);
+        RetrofitConsumer<CreateCreditCardResponse> retrofitConsumer = new RetrofitConsumer<>(context);
         CreateCreditCardService service = retrofitConsumer.getRetrofit().create(CreateCreditCardService.class);
 
         if (!isWorkInBackground()) {

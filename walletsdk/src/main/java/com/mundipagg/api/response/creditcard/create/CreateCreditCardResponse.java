@@ -7,4 +7,6 @@ import com.mundipagg.api.creditcard.NewCreditCard;
  * Created by JGabrielFreitas on 16/11/16.
  */
 
-public class CreateCreditCardResponse extends ResponseBase<NewCreditCard> {}
+public class CreateCreditCardResponse extends ResponseBase<NewCreditCard> {
+
+}
