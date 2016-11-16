@@ -2,4 +2,5 @@
     <string name="app_name">WallterDemo</string>
     <string name="action_settings">Settings</string>
     <string name="msg_hello_world">Hello World!</string>
+    <string name="title_activity_scan_credit_card">ScanCreditCardActivity</string>
 </resources>

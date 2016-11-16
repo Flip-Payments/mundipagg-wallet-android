@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mundipagg.walletdemo">
 
+    <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Permission to use camera - required -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Camera features - recommended -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
     <application
         android:name=".DemoApplication"
         android:allowBackup="true"
@@ -26,8 +37,17 @@
             android:value="e10d4b4a-a994-498b-99fd-29fb6587f1ef" />
 
         <activity
-            android:label="@string/list_card"
-            android:name=".activities.ListCreditCardsActivity" />
+            android:name=".activities.ListCreditCardsActivity"
+            android:label="@string/list_card" />
+        <activity
+            android:name=".activities.ScanCreditCardActivity"
+            android:label="@string/title_activity_scan_credit_card" />
+
+        <!-- Activities responsible for gathering payment info -->
+        <!-- from card.io -->
+        <activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="io.card.payment.DataEntryActivity" />
+
     </application>
 
 </manifest>

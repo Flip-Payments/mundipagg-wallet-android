@@ -43,7 +43,6 @@ public class MainActivity extends DemoBaseActivity implements OnPermissionReques
                 doIntent(ListCreditCardsActivity.class);
                 break;
             case 1:
-//                doIntent(ListCreditCardsActivity.class);
                 new CameraPermissionManager(this, this).requestPermission();
                 break;
         }
@@ -51,7 +50,7 @@ public class MainActivity extends DemoBaseActivity implements OnPermissionReques
 
     @Override
     public void onPermissionAllowed() {
-        toast("permission ok");
+        doIntent(ScanCreditCardActivity.class);
     }
 
     @Override
