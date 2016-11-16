@@ -6,7 +6,7 @@ import retrofit2.Response;
  * Created by JGabrielFreitas on 28/10/16.
  */
 
-public interface RetrofitCallbackInterface<T> {
+public interface RetrofitCallback<T> {
 
     // response code 200, 201..
     void onSuccess(T response);

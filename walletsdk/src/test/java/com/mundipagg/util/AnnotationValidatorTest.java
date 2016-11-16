@@ -1,7 +1,7 @@
 package com.mundipagg.util;
 
 import com.mundipagg.api.Page;
-import com.mundipagg.api.creditcard.CreditCard;
+import com.mundipagg.api.creditcard.CreditCardFromList;
 import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
 
 import org.junit.Assert;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 public class AnnotationValidatorTest {
 
     @Mock CreditCardListResponse listResponse;
-    @Mock List<CreditCard>       creditCards;
+    @Mock List<CreditCardFromList> creditCardFromLists;
     @Mock Page                   page;
 
     @Before
@@ -31,7 +31,7 @@ public class AnnotationValidatorTest {
 
         MockitoAnnotations.initMocks(this);
 
-        when(listResponse.getData()).thenReturn(creditCards);
+        when(listResponse.getData()).thenReturn(creditCardFromLists);
         when(listResponse.getPaging()).thenReturn(page);
     }
 

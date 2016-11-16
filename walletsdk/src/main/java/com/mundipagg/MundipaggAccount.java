@@ -7,6 +7,7 @@ package com.mundipagg;
 public class MundipaggAccount {
 
     private String accessToken;
+    private String customerId;
 
     private static MundipaggAccount ourInstance = new MundipaggAccount();
 
@@ -23,5 +24,13 @@ public class MundipaggAccount {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 }

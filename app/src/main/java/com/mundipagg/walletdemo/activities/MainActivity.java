@@ -19,8 +19,7 @@ import uk.co.ribot.easyadapter.EasyAdapter;
 @InjectLayout(layout = R.layout.activity_main)
 public class MainActivity extends DemoBaseActivity {
 
-    @Bind(R.id.actionsRecyclerView)
-    ListView actionsRecyclerView;
+    @Bind(R.id.actionsRecyclerView) ListView actionsRecyclerView;
 
     @Override
     protected void modifyViews() {

@@ -15,11 +15,17 @@ public abstract class ServiceLayer {
         this.context = context;
     }
 
+    public ServiceLayer(Context context, boolean disableFeedback) {
+        this.context = context;
+        if (disableFeedback)
+            disableFeedback();
+    }
+
     public boolean isWorkInBackground() {
         return doInBackground;
     }
 
-    public void enableBackground() {
+    public void disableFeedback() {
         this.doInBackground = true;
     }
 }

@@ -16,6 +16,7 @@ public class MundipaggWallet {
 
         // configure mundipagg account
         MundipaggAccount.getInstance().setAccessToken(getAccessToken(context));
+        MundipaggAccount.getInstance().setCustomerId("cus_G2gE9gdipSGalVYJ");
     }
 
     private static String getAccessToken(Context context) {

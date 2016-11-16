@@ -3,7 +3,7 @@ package com.mundipagg.api;
 import android.app.ProgressDialog;
 import android.content.Context;
 
-import com.mundipagg.api.interfaces.RetrofitCallbackInterface;
+import com.mundipagg.api.interfaces.RetrofitCallback;
 import com.mundipagg.api.interfaces.RetrofitExecutableInterface;
 import com.mundipagg.util.Utils;
 
@@ -22,10 +22,10 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
 
     boolean workInBackground = true;
     Context context;
-    protected ProgressDialog dialog;
+    private ProgressDialog dialog;
     private String dialogMessage;
     private String dialogTitle;
-    private RetrofitCallbackInterface retrofitCallback;
+    private RetrofitCallback retrofitCallback;
     Retrofit retrofit;
     Call<T> api;
     private int responseCode;
@@ -46,7 +46,7 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
             dialog = ProgressDialog.show(context, dialogTitle, dialogMessage, false, false);
     }
 
-    public void setRetrofitCallback(RetrofitCallbackInterface<T> retrofitCallback) {
+    public void setRetrofitCallback(RetrofitCallback<T> retrofitCallback) {
         this.retrofitCallback = retrofitCallback;
     }
 
@@ -99,7 +99,7 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
 
     private void tryCloseDialog() {
 
-        try{
+        try {
 
             if (dialog != null)
                 if (dialog.isShowing())

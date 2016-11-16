@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.mundipagg.annotations.CantBeNull;
 import com.mundipagg.api.Page;
 import com.mundipagg.api.ResponseBase;
-import com.mundipagg.api.creditcard.CreditCard;
+import com.mundipagg.api.creditcard.CreditCardFromList;
 
 import java.util.List;
 
@@ -12,13 +12,13 @@ import java.util.List;
  * Created by JGabrielFreitas on 25/10/16.
  */
 
-public class CreditCardListResponse extends ResponseBase {
+public class CreditCardListResponse extends ResponseBase<CreditCardFromList> {
 
-    @SerializedName("data")    private List<CreditCard> data;
-    @SerializedName("paging")  private Page             paging;
+    @SerializedName("data")    private List<CreditCardFromList> data;
+    @SerializedName("paging")  private Page                     paging;
 
     @CantBeNull
-    public List<CreditCard> getData() {
+    public List<CreditCardFromList> getData() {
         return data;
     }
 
