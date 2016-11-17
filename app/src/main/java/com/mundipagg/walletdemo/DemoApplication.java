@@ -1,6 +1,7 @@
 package com.mundipagg.walletdemo;
 
 import com.jgabrielfreitas.permissions.core.application.CorePermissionsApplication;
+import com.mundipagg.MundipaggAccount;
 import com.mundipagg.MundipaggWallet;
 
 /**
@@ -14,5 +15,6 @@ public class DemoApplication extends CorePermissionsApplication {
         super.onCreate();
 
         MundipaggWallet.init(this);
+        MundipaggAccount.getInstance().setCustomerId("cus_G2gE9gdipSGalVYJ");
     }
 }
