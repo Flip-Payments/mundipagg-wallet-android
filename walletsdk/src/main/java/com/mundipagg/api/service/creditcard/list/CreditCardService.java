@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 
 public interface CreditCardService {
 
-    @Headers("Authorization: Basic c2tfdGVzdF9BMGJrd2J2RkUydU9sV1lFOg==")
+    @Headers("Authorization: Basic c2tfeGxQYlpvSHZBSDQ2NzVXSjo=")
     @GET("core/v1.0/customers/{CUSTOMER_ID}/credit_cards")
     Call<CreditCardListResponse> getCreditCards(@Path("CUSTOMER_ID") String customerId);
 
