@@ -3,7 +3,9 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
 // This is the library version used when deploying the artifact
-version = "0.0.2"
+version = "0.0.6"
+
+// ./gradlew bintrayUpload
 
 android {
     compileSdkVersion 24
@@ -16,6 +18,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "URL_API", "\"https://api.mundipagg.com\""
 
     }
     buildTypes {
@@ -37,7 +40,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'commons-codec:commons-codec:1.5'
 
+    // REST integration
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
     testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
 }
 
 def siteUrl = 'https://github.com/mundipagg/mundipagg-wallet-android'      // Homepage URL of the library
