@@ -28,23 +28,6 @@ public class Utils {
                 .client(okHttpClient)
                 .baseUrl(URL)
                 .addConverterFactory(create())
-                //.addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-    }
-
-    public static Retrofit createRetrofitRx(String URL) {
-
-        // create interceptor to show all request and response in log (for debug)
-        Builder builder = new Builder();
-        builder.readTimeout(60, SECONDS);
-        builder.writeTimeout(60, SECONDS);
-
-        OkHttpClient okHttpClient = builder.build();
-
-        return new Retrofit.Builder()
-                .client(okHttpClient)
-                .baseUrl(URL)
-                .addConverterFactory(create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
     }
