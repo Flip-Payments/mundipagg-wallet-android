@@ -4,6 +4,7 @@ package com.mundipagg.util;
 import okhttp3.OkHttpClient;
 import okhttp3.OkHttpClient.Builder;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static retrofit2.converter.gson.GsonConverterFactory.create;
@@ -24,9 +25,27 @@ public class Utils {
         OkHttpClient okHttpClient = builder.build();
 
         return new Retrofit.Builder()
-                           .client(okHttpClient)
-                           .baseUrl(URL)
-                           .addConverterFactory(create())
-                           .build();
+                .client(okHttpClient)
+                .baseUrl(URL)
+                .addConverterFactory(create())
+                //.addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+    }
+
+    public static Retrofit createRetrofitRx(String URL) {
+
+        // create interceptor to show all request and response in log (for debug)
+        Builder builder = new Builder();
+        builder.readTimeout(60, SECONDS);
+        builder.writeTimeout(60, SECONDS);
+
+        OkHttpClient okHttpClient = builder.build();
+
+        return new Retrofit.Builder()
+                .client(okHttpClient)
+                .baseUrl(URL)
+                .addConverterFactory(create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
     }
 }
