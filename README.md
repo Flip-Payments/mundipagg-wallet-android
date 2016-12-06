@@ -10,5 +10,9 @@ Com essa SDK você poderá:
 * Listar cartão
 * Deletar cartão
 
-## TODO
+###### Você pode ver toda a nossa documentação [aqui](https://github.com/mundipagg/mundipagg-wallet-android/wiki/Getting-Started)
+
+#### TODO
+* ~~Criar cartão~~
+* ~~Listar cartão~~
 * Deletar cartão
