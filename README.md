@@ -16,3 +16,23 @@ Com essa SDK você poderá:
 * ~~Criar cartão~~
 * ~~Listar cartão~~
 * Deletar cartão
+
+### Gradle
+
+Adicione o artifactory no `/build.gradle` raíz
+
+```gradle
+    allprojects {
+        repositories {
+            jcenter()
+            maven { url "http://dl.bintray.com/jgabrielfreitas/maven" }
+        }
+    }
+```
+
+E no seu `app/build.gradle`
+```
+    // wallet sdk
+    compile 'com.mundipagg:walletsdk:0.0.6'
+```
+
