@@ -1,4 +1,18 @@
-# mundipagg-wallet-android
-Wallet library for Android applications
 
-Travis status: [![Build Status](https://travis-ci.org/mundipagg/mundipagg-wallet-android.svg?branch=development)](https://travis-ci.org/mundipagg/mundipagg-wallet-android)
+<center><img src="/art/mundilogo.png"></center>
+
+# Wallet SDK Android
+
+SDK de integração com o Mundipagg Wallet API.
+Com essa SDK você poderá:
+
+* Criar cartão
+* Listar cartão
+* Deletar cartão
+
+###### Você pode ver toda a nossa documentação [aqui](https://github.com/mundipagg/mundipagg-wallet-android/wiki/Getting-Started)
+
+#### TODO
+* ~~Criar cartão~~
+* ~~Listar cartão~~
+* Deletar cartão
