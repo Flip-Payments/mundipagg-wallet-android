@@ -50,7 +50,8 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
 
     @Override
     public void responseServerError(CreditCardListResponse object, Response<CreditCardListResponse> response) {
-        toast("CLIENT ERROR");
+        toast("CLIENT ERROR" + response.code());
+
     }
 
     @Override
