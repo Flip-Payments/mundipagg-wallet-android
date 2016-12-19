@@ -4,7 +4,6 @@ package com.mundipagg.util;
 import okhttp3.OkHttpClient;
 import okhttp3.OkHttpClient.Builder;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static retrofit2.converter.gson.GsonConverterFactory.create;
@@ -28,7 +27,6 @@ public class Utils {
                 .client(okHttpClient)
                 .baseUrl(URL)
                 .addConverterFactory(create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
     }
 }

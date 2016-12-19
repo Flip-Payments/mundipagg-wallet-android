@@ -3,4 +3,5 @@
     <string name="list_card">Listar Cartões</string>
     <string name="msg_loading_cards">Carregando os cartões..</string>
     <string name="msg_creating_credit_card">Criando novo cartão..</string>
+    <string name="msg_deleting_credit_card">Deletando cartão..</string>
 </resources>

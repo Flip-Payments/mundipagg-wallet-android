@@ -7,9 +7,12 @@ import com.mundipagg.api.RetrofitConsumer;
 import com.mundipagg.api.ServiceLayer;
 import com.mundipagg.api.creditcard.NewCreditCard;
 import com.mundipagg.api.response.creditcard.create.CreateCreditCardResponse;
+import com.mundipagg.api.response.creditcard.delete.CreditCardDeleteResponse;
 import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
 import com.mundipagg.api.service.creditcard.create.CreateCreditCardCallback;
 import com.mundipagg.api.service.creditcard.create.CreateCreditCardService;
+import com.mundipagg.api.service.creditcard.delete.DeleteCreditCardCallback;
+import com.mundipagg.api.service.creditcard.delete.DeleteCreditCardService;
 import com.mundipagg.api.service.creditcard.list.CreditCardListCallback;
 import com.mundipagg.api.service.creditcard.list.CreditCardService;
 
@@ -59,4 +62,16 @@ public class CreditCardServiceLayer extends ServiceLayer {
         retrofitConsumer.run();
     }
 
+    public void delete(String creditCardId, DeleteCreditCardCallback callbackInterface) {
+        RetrofitConsumer<CreditCardDeleteResponse> retrofitConsumer = new RetrofitConsumer<>(context);
+        DeleteCreditCardService service = retrofitConsumer.getRetrofit().create(DeleteCreditCardService.class);
+        if (!isWorkInBackground()) {
+            retrofitConsumer.setDialogMessage(context.getString(R.string.msg_deleting_credit_card));
+            retrofitConsumer.setWorkInBackground(isWorkInBackground());
+        }
+
+        retrofitConsumer.setExecutable(service.delete(getInstance().getCustomerId(), creditCardId));
+        retrofitConsumer.setRetrofitCallback(callbackInterface);
+        retrofitConsumer.run();
+    }
 }

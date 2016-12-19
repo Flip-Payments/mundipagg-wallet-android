@@ -1,16 +1,12 @@
 package com.mundipagg.walletdemo.activities;
 
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.jgabrielfreitas.layoutid.annotations.InjectLayout;
-import com.jgabrielfreitas.permissions.core.application.CorePermissionsApplication;
 import com.jgabrielfreitas.permissions.core.interfaces.OnPermissionRequest;
 import com.jgabrielfreitas.permissions.core.managers.CameraPermissionManager;
 import com.karumi.dexter.PermissionToken;
 import com.mundipagg.walletdemo.R;
-import com.mundipagg.walletdemo.activities.DemoBaseActivity;
-import com.mundipagg.walletdemo.activities.ListCreditCardsActivity;
 import com.mundipagg.walletdemo.adapters.SimpleListAdapter;
 
 import java.util.ArrayList;
@@ -23,7 +19,8 @@ import uk.co.ribot.easyadapter.EasyAdapter;
 @InjectLayout(layout = R.layout.activity_main)
 public class MainActivity extends DemoBaseActivity implements OnPermissionRequest {
 
-    @Bind(R.id.actionsRecyclerView) ListView actionsRecyclerView;
+    @Bind(R.id.actionsRecyclerView)
+    ListView actionsRecyclerView;
 
     @Override
     protected void modifyViews() {
@@ -32,7 +29,7 @@ public class MainActivity extends DemoBaseActivity implements OnPermissionReques
         List<String> actions = new ArrayList<>();
         actions.add("Listar cartões");
         actions.add("Criar cartão");
-
+        actions.add("Deletar cartão");
         actionsRecyclerView.setAdapter(new EasyAdapter<>(this, SimpleListAdapter.class, actions));
     }
 
@@ -44,6 +41,9 @@ public class MainActivity extends DemoBaseActivity implements OnPermissionReques
                 break;
             case 1:
                 new CameraPermissionManager(this, this).requestPermission();
+                break;
+            case 2:
+                doIntent(ListCreditCardsActivity.class);
                 break;
         }
     }
