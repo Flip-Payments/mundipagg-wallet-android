@@ -3,8 +3,8 @@ package com.mundipagg.api.service.creditcard.delete;
 import com.mundipagg.api.response.creditcard.delete.CreditCardDeleteResponse;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Headers;
-import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 /**
@@ -14,6 +14,6 @@ import retrofit2.http.Path;
 public interface DeleteCreditCardService {
 
     @Headers("Authorization: Basic c2tfeGxQYlpvSHZBSDQ2NzVXSjo=")
-    @POST("core/v1.0/customers/{customer_id}/credit_cards/{credit_card_id}")
-    Call<CreditCardDeleteResponse> delete(@Path("CUSTOMER_ID") String customerId, @Path("cred") String creditCardId);
+    @DELETE("core/v1.0/customers/{customer_id}/credit_cards/{credit_card_id}")
+    Call<CreditCardDeleteResponse> delete(@Path("customer_id") String customerId, @Path("credit_card_id") String creditCardId);
 }

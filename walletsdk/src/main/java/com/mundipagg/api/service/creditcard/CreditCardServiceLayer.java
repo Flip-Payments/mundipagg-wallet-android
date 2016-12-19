@@ -69,7 +69,6 @@ public class CreditCardServiceLayer extends ServiceLayer {
             retrofitConsumer.setDialogMessage(context.getString(R.string.msg_deleting_credit_card));
             retrofitConsumer.setWorkInBackground(isWorkInBackground());
         }
-
         retrofitConsumer.setExecutable(service.delete(getInstance().getCustomerId(), creditCardId));
         retrofitConsumer.setRetrofitCallback(callbackInterface);
         retrofitConsumer.run();
