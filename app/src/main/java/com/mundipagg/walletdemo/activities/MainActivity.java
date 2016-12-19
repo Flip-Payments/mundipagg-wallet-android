@@ -29,6 +29,7 @@ public class MainActivity extends DemoBaseActivity implements OnPermissionReques
         List<String> actions = new ArrayList<>();
         actions.add("Listar cartões");
         actions.add("Criar cartão");
+        actions.add("Deletar cartão");
         actionsRecyclerView.setAdapter(new EasyAdapter<>(this, SimpleListAdapter.class, actions));
     }
 
@@ -42,7 +43,7 @@ public class MainActivity extends DemoBaseActivity implements OnPermissionReques
                 new CameraPermissionManager(this, this).requestPermission();
                 break;
             case 2:
-                doIntent(ListCreditCardsActivity.class);
+                doIntent(DeleteActivity.class);
                 break;
         }
     }
