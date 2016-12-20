@@ -15,7 +15,7 @@ Com essa SDK você poderá:
 #### TODO
 * ~~Criar cartão~~
 * ~~Listar cartão~~
-* Deletar cartão
+* ~~Deletar cartão~~
 
 ### Gradle
 
@@ -33,6 +33,6 @@ Adicione o artifactory no `/build.gradle` raíz
 E no seu `app/build.gradle`
 ```gradle
     // wallet sdk
-    compile 'com.mundipagg:walletsdk:0.0.6'
+    compile 'com.mundipagg:walletsdk:0.0.7'
 ```
 

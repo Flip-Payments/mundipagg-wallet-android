@@ -2,6 +2,9 @@
 
 ## Versions
 
+### `0.0.7`
+* delete credit card option
+
 ### `0.0.5`
 * needs to pass the customer_id
 
