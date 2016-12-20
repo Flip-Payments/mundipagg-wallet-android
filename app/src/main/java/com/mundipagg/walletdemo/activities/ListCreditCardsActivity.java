@@ -5,8 +5,8 @@ import android.widget.ListView;
 import com.jgabrielfreitas.layoutid.annotations.InjectLayout;
 import com.mundipagg.api.creditcard.CreditCardFromList;
 import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
-import com.mundipagg.api.service.creditcard.list.CreditCardListCallback;
 import com.mundipagg.api.service.creditcard.CreditCardServiceLayer;
+import com.mundipagg.api.service.creditcard.list.CreditCardListCallback;
 import com.mundipagg.walletdemo.R;
 import com.mundipagg.walletdemo.adapters.SimpleListAdapter;
 
@@ -17,14 +17,13 @@ import butterknife.Bind;
 import retrofit2.Response;
 import uk.co.ribot.easyadapter.EasyAdapter;
 
-import static android.widget.Toast.LENGTH_SHORT;
-import static android.widget.Toast.makeText;
 import static java.lang.String.format;
 
 @InjectLayout(layout = R.layout.activity_list_credit_cards)
 public class ListCreditCardsActivity extends DemoBaseActivity implements CreditCardListCallback {
 
-    @Bind(R.id.creditCardListView) ListView creditCardListView;
+    @Bind(R.id.creditCardListView)
+    ListView creditCardListView;
 
     @Override
     protected void modifyViews() {
@@ -34,7 +33,6 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
 
     @Override
     public void onSuccess(CreditCardListResponse response) {
-
         List<String> cards = new ArrayList<>();
 
         for (CreditCardFromList creditCardFromList : response.getData())
@@ -45,7 +43,8 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
 
     @Override
     public void responseServerError(CreditCardListResponse object, Response<CreditCardListResponse> response) {
-        toast("CLIENT ERROR");
+        toast("CLIENT ERROR" + response.code());
+
     }
 
     @Override

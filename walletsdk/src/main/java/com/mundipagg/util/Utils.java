@@ -24,9 +24,9 @@ public class Utils {
         OkHttpClient okHttpClient = builder.build();
 
         return new Retrofit.Builder()
-                           .client(okHttpClient)
-                           .baseUrl(URL)
-                           .addConverterFactory(create())
-                           .build();
+                .client(okHttpClient)
+                .baseUrl(URL)
+                .addConverterFactory(create())
+                .build();
     }
 }

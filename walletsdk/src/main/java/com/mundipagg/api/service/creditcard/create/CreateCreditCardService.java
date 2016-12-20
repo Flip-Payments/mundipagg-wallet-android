@@ -2,7 +2,6 @@ package com.mundipagg.api.service.creditcard.create;
 
 import com.mundipagg.api.creditcard.NewCreditCard;
 import com.mundipagg.api.response.creditcard.create.CreateCreditCardResponse;
-import com.mundipagg.api.response.creditcard.list.CreditCardListResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
