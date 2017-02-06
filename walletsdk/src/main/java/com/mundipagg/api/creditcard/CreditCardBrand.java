@@ -10,6 +10,8 @@ public enum CreditCardBrand {
     Discover,
     Mastercard,
     Visa,
-    Amex
-
+    Amex,
+    Aura,
+    Elo,
+    Hipercard
 }
