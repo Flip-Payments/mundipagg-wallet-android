@@ -37,10 +37,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Mundipagg's token to access API -->
+        <!-- Mundipagg's token to access API in Base64-->
         <meta-data
             android:name="MundipaggAccount"
-            android:value="e10d4b4a-a994-498b-99fd-29fb6587f1ef" />
+            android:value="@string/key_mundipagg" />
 
         <activity
             android:name=".activities.ListCreditCardsActivity"

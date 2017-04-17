@@ -27,3 +27,4 @@ public class CreditCardListResponse extends ResponseBase<CreditCardFromList> {
         return paging;
     }
 }
+

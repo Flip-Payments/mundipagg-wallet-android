@@ -77,14 +77,12 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
             api.enqueue(new Callback<T>() {
                 @Override
                 public void onResponse(Call<T> call, Response<T> response) {
-
                     responseCode = response.code();
 
                     if (responseCode <= 202)
                         retrofitCallback.onSuccess(response.body());
                     else
                         retrofitCallback.responseServerError(response.body(), response);
-
                     tryCloseDialog();
                 }
 
@@ -92,6 +90,7 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
                 public void onFailure(Call<T> call, Throwable t) {
                     retrofitCallback.onError(t);
                     tryCloseDialog();
+                    t.printStackTrace();
                 }
 
             });
