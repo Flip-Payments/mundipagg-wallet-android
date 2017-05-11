@@ -2,6 +2,9 @@
 
 ## Versions
 
+### `0.1.1`
+* update MundiPaggWallet init
+
 ### `0.1.0`
 * update header request
 
