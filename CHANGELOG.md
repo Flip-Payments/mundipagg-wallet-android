@@ -2,6 +2,9 @@
 
 ## Versions
 
+### `0.1.0`
+* update header request
+
 ### `0.0.7`
 * delete credit card option
 
