@@ -3,6 +3,7 @@ package com.mundipagg.api;
 import android.app.ProgressDialog;
 import android.content.Context;
 
+import com.mundipagg.MundipaggAccount;
 import com.mundipagg.api.interfaces.RetrofitCallback;
 import com.mundipagg.api.interfaces.RetrofitExecutableInterface;
 import com.mundipagg.util.Utils;
@@ -71,29 +72,33 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
     }
 
     public void run() {
-
+        if (MundipaggAccount.getInstance().getAccessToken() == null) {
+            throw new NullPointerException("Token == null, need call MundiPaggWallet.init(token)");
+        }
+        if (retrofitCallback == null) {
+            throw new NullPointerException("Callback == null, have you set a callback?");
+        }
         executeFeedback();
-        if (retrofitCallback != null)
-            api.enqueue(new Callback<T>() {
-                @Override
-                public void onResponse(Call<T> call, Response<T> response) {
-                    responseCode = response.code();
+        api.enqueue(new Callback<T>() {
+            @Override
+            public void onResponse(Call<T> call, Response<T> response) {
+                responseCode = response.code();
 
-                    if (responseCode <= 202)
-                        retrofitCallback.onSuccess(response.body());
-                    else
-                        retrofitCallback.responseServerError(response.body(), response);
-                    tryCloseDialog();
-                }
+                if (responseCode <= 202)
+                    retrofitCallback.onSuccess(response.body());
+                else
+                    retrofitCallback.responseServerError(response.body(), response);
+                tryCloseDialog();
+            }
 
-                @Override
-                public void onFailure(Call<T> call, Throwable t) {
-                    retrofitCallback.onError(t);
-                    tryCloseDialog();
-                    t.printStackTrace();
-                }
+            @Override
+            public void onFailure(Call<T> call, Throwable t) {
+                retrofitCallback.onError(t);
+                tryCloseDialog();
+                t.printStackTrace();
+            }
 
-            });
+        });
     }
 
     private void tryCloseDialog() {

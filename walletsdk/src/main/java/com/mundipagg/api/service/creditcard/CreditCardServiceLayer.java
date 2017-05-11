@@ -41,10 +41,13 @@ public class CreditCardServiceLayer extends ServiceLayer {
             retrofitConsumer.setDialogMessage(context.getString(R.string.msg_loading_cards));
             retrofitConsumer.setWorkInBackground(isWorkInBackground());
         }
-
-        retrofitConsumer.setExecutable(service.getCreditCards(getInstance().getCustomerId()));
-        retrofitConsumer.setRetrofitCallback(callbackInterface);
-        retrofitConsumer.run();
+        try {
+            retrofitConsumer.setExecutable(service.getCreditCards(getInstance().getCustomerId()));
+            retrofitConsumer.setRetrofitCallback(callbackInterface);
+            retrofitConsumer.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void create(NewCreditCard newCreditCard, CreateCreditCardCallback callbackInterface) {
@@ -56,10 +59,13 @@ public class CreditCardServiceLayer extends ServiceLayer {
             retrofitConsumer.setDialogMessage(context.getString(R.string.msg_creating_credit_card));
             retrofitConsumer.setWorkInBackground(isWorkInBackground());
         }
-
-        retrofitConsumer.setExecutable(service.create(getInstance().getCustomerId(), newCreditCard));
-        retrofitConsumer.setRetrofitCallback(callbackInterface);
-        retrofitConsumer.run();
+        try {
+            retrofitConsumer.setExecutable(service.create(getInstance().getCustomerId(), newCreditCard));
+            retrofitConsumer.setRetrofitCallback(callbackInterface);
+            retrofitConsumer.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void delete(String creditCardId, DeleteCreditCardCallback callbackInterface) {
@@ -69,8 +75,12 @@ public class CreditCardServiceLayer extends ServiceLayer {
             retrofitConsumer.setDialogMessage(context.getString(R.string.msg_deleting_credit_card));
             retrofitConsumer.setWorkInBackground(isWorkInBackground());
         }
-        retrofitConsumer.setExecutable(service.delete(getInstance().getCustomerId(), creditCardId));
-        retrofitConsumer.setRetrofitCallback(callbackInterface);
-        retrofitConsumer.run();
+        try {
+            retrofitConsumer.setExecutable(service.delete(getInstance().getCustomerId(), creditCardId));
+            retrofitConsumer.setRetrofitCallback(callbackInterface);
+            retrofitConsumer.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

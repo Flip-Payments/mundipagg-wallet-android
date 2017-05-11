@@ -1,34 +1,12 @@
 package com.mundipagg;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-
-import static android.content.pm.PackageManager.GET_META_DATA;
-
 /**
  * Created by JGabrielFreitas on 26/09/16.
  */
 
 public class MundipaggWallet {
-
-    public static void init(Context context) {
-
+    public static void init(String token) {
         // configure mundipagg account
-        MundipaggAccount.getInstance().setAccessToken(getAccessToken(context));
+        MundipaggAccount.getInstance().setAccessToken(token);
     }
-
-    private static String getAccessToken(Context context) {
-
-        try {
-
-            ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), GET_META_DATA);
-            return (String) applicationInfo.metaData.get("MundipaggAccount");
-
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
 }

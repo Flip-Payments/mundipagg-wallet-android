@@ -6,8 +6,8 @@ package com.mundipagg;
  */
 public class MundipaggAccount {
 
-    private String accessToken;
-    private String customerId;
+    private String accessToken = null;
+    private String customerId = null;
 
     private static MundipaggAccount ourInstance = new MundipaggAccount();
 
@@ -22,11 +22,14 @@ public class MundipaggAccount {
         return accessToken;
     }
 
-    public void setAccessToken(String accessToken) {
+    void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
 
     public String getCustomerId() {
+        if (customerId == null) {
+            throw new NullPointerException("customerId == null");
+        }
         return customerId;
     }
 
