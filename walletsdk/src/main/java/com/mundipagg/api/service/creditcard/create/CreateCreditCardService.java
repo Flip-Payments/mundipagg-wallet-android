@@ -14,6 +14,6 @@ import retrofit2.http.Path;
 
 public interface CreateCreditCardService {
 
-    @POST("core/v1.0/customers/{CUSTOMER_ID}/credit_cards")
+    @POST("core/v1/customers/{CUSTOMER_ID}/cards")
     Call<CreateCreditCardResponse> create(@Path("CUSTOMER_ID") String customerId, @Body NewCreditCard newCreditCard);
 }

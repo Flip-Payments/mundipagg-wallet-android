@@ -12,6 +12,6 @@ import retrofit2.http.Path;
 
 public interface DeleteCreditCardService {
 
-    @DELETE("core/v1.0/customers/{customer_id}/credit_cards/{credit_card_id}")
+    @DELETE("core/v1/customers/{customer_id}/cards/{credit_card_id}")
     Call<CreditCardDeleteResponse> delete(@Path("customer_id") String customerId, @Path("credit_card_id") String creditCardId);
 }

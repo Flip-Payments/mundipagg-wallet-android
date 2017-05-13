@@ -12,6 +12,6 @@ import retrofit2.http.Path;
 
 public interface CreditCardService {
 
-    @GET("core/v1.0/customers/{CUSTOMER_ID}/credit_cards")
+    @GET("core/v1/customers/{CUSTOMER_ID}/cards")
     Call<CreditCardListResponse> getCreditCards(@Path("CUSTOMER_ID") String customerId);
 }
