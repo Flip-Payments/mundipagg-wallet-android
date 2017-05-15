@@ -25,7 +25,7 @@ Adicione o artifactory no `/build.gradle` raíz
     allprojects {
         repositories {
             jcenter()
-            maven { url "http://dl.bintray.com/jgabrielfreitas/maven" }
+           maven { url "https://jitpack.io" }
         }
     }
 ```
@@ -33,6 +33,6 @@ Adicione o artifactory no `/build.gradle` raíz
 E no seu `app/build.gradle`
 ```gradle
     // wallet sdk
-    compile 'com.mundipagg:walletsdk:0.1.1'
+    compile 'com.github.Flip-Payments:mundipagg-wallet-android:0.1.6'
 ```
 
