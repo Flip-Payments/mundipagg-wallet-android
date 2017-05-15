@@ -33,6 +33,6 @@ Adicione o artifactory no `/build.gradle` raíz
 E no seu `app/build.gradle`
 ```gradle
     // wallet sdk
-    compile 'com.mundipagg:walletsdk:0.1.0'
+    compile 'com.mundipagg:walletsdk:0.1.1'
 ```
 
