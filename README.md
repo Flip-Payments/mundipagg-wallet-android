@@ -2,6 +2,7 @@
 <center><img src="/art/mundilogo.png"></center>
 
 # Wallet SDK Android
+[![](https://jitpack.io/v/Flip-Payments/mundipagg-wallet-android.svg)](https://jitpack.io/#Flip-Payments/mundipagg-wallet-android)
 
 SDK de integração com o Mundipagg Wallet API.
 Com essa SDK você poderá:
@@ -11,11 +12,6 @@ Com essa SDK você poderá:
 * Deletar cartão
 
 ###### Você pode ver toda a nossa documentação [aqui](https://github.com/mundipagg/mundipagg-wallet-android/wiki/Getting-Started)
-
-#### TODO
-* ~~Criar cartão~~
-* ~~Listar cartão~~
-* ~~Deletar cartão~~
 
 ### Gradle
 
@@ -33,6 +29,6 @@ Adicione o artifactory no `/build.gradle` raíz
 E no seu `app/build.gradle`
 ```gradle
     // wallet sdk
-    compile 'com.github.Flip-Payments:mundipagg-wallet-android:0.1.6'
+     compile 'com.github.Flip-Payments:mundipagg-wallet-android:0.1.7'
 ```
 
