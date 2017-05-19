@@ -65,7 +65,7 @@ public class ScanCreditCardActivity extends DemoBaseActivity implements CreateCr
 
                 newCreditCard.setBillingAddress(address);
 
-                new CreditCardServiceLayer(this).create(newCreditCard, this);
+                new CreditCardServiceLayer().create(newCreditCard, this);
 
             } else
                 toast("scan canceled");
@@ -78,12 +78,6 @@ public class ScanCreditCardActivity extends DemoBaseActivity implements CreateCr
     @Override
     public void onSuccess(CreateCreditCardResponse response) {
         toast("Card added successfully");
-        killThisActivity();
-    }
-
-    @Override
-    public void responseServerError(CreateCreditCardResponse object, Response<CreateCreditCardResponse> response) {
-        toast("oh no! a client error!");
         killThisActivity();
     }
 

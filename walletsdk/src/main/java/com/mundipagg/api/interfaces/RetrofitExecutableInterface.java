@@ -8,6 +8,5 @@ import retrofit2.Call;
 
 public interface RetrofitExecutableInterface<T> {
 
-
     void setExecutable(Call<T> api);
 }

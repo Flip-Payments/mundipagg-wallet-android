@@ -1,8 +1,5 @@
 package com.mundipagg.api.service.creditcard;
 
-import android.content.Context;
-
-import com.mundipagg.R;
 import com.mundipagg.api.RetrofitConsumer;
 import com.mundipagg.api.ServiceLayer;
 import com.mundipagg.api.creditcard.NewCreditCard;
@@ -24,23 +21,14 @@ import static com.mundipagg.MundipaggAccount.getInstance;
 
 public class CreditCardServiceLayer extends ServiceLayer {
 
-    public CreditCardServiceLayer(Context context) {
-        super(context);
-    }
-
-    public CreditCardServiceLayer(Context context, boolean disableFeedback) {
-        super(context, disableFeedback);
+    public CreditCardServiceLayer() {
     }
 
     public void getAllCreditCards(CreditCardListCallback callbackInterface) {
 
-        RetrofitConsumer<CreditCardListResponse> retrofitConsumer = new RetrofitConsumer<>(context);
+        RetrofitConsumer<CreditCardListResponse> retrofitConsumer = new RetrofitConsumer<>();
         CreditCardService service = retrofitConsumer.getRetrofit().create(CreditCardService.class);
 
-        if (!isWorkInBackground()) {
-            retrofitConsumer.setDialogMessage(context.getString(R.string.msg_loading_cards));
-            retrofitConsumer.setWorkInBackground(isWorkInBackground());
-        }
         try {
             retrofitConsumer.setExecutable(service.getCreditCards(getInstance().getCustomerId()));
             retrofitConsumer.setRetrofitCallback(callbackInterface);
@@ -52,13 +40,9 @@ public class CreditCardServiceLayer extends ServiceLayer {
 
     public void create(NewCreditCard newCreditCard, CreateCreditCardCallback callbackInterface) {
 
-        RetrofitConsumer<CreateCreditCardResponse> retrofitConsumer = new RetrofitConsumer<>(context);
+        RetrofitConsumer<CreateCreditCardResponse> retrofitConsumer = new RetrofitConsumer<>();
         CreateCreditCardService service = retrofitConsumer.getRetrofit().create(CreateCreditCardService.class);
 
-        if (!isWorkInBackground()) {
-            retrofitConsumer.setDialogMessage(context.getString(R.string.msg_creating_credit_card));
-            retrofitConsumer.setWorkInBackground(isWorkInBackground());
-        }
         try {
             retrofitConsumer.setExecutable(service.create(getInstance().getCustomerId(), newCreditCard));
             retrofitConsumer.setRetrofitCallback(callbackInterface);
@@ -69,12 +53,9 @@ public class CreditCardServiceLayer extends ServiceLayer {
     }
 
     public void delete(String creditCardId, DeleteCreditCardCallback callbackInterface) {
-        RetrofitConsumer<CreditCardDeleteResponse> retrofitConsumer = new RetrofitConsumer<>(context);
+        RetrofitConsumer<CreditCardDeleteResponse> retrofitConsumer = new RetrofitConsumer<>();
         DeleteCreditCardService service = retrofitConsumer.getRetrofit().create(DeleteCreditCardService.class);
-        if (!isWorkInBackground()) {
-            retrofitConsumer.setDialogMessage(context.getString(R.string.msg_deleting_credit_card));
-            retrofitConsumer.setWorkInBackground(isWorkInBackground());
-        }
+
         try {
             retrofitConsumer.setExecutable(service.delete(getInstance().getCustomerId(), creditCardId));
             retrofitConsumer.setRetrofitCallback(callbackInterface);

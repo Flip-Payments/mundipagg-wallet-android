@@ -1,6 +1,7 @@
 package com.mundipagg.util;
 
 
+import com.mundipagg.BuildConfig;
 import com.mundipagg.MundipaggAccount;
 
 import java.io.IOException;
@@ -19,9 +20,9 @@ import static retrofit2.converter.gson.GsonConverterFactory.create;
  * Created by JGabrielFreitas on 28/10/16.
  */
 
-public class Utils {
+public class Factory {
 
-    public static Retrofit createRetrofit(String URL) {
+    public static Retrofit createRetrofit() {
 
         // create interceptor to show all request and response in log (for debug)
         Builder builder = new Builder();
@@ -43,7 +44,7 @@ public class Utils {
 
         return new Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl(URL)
+                .baseUrl(BuildConfig.URL_API)
                 .addConverterFactory(create())
                 .build();
     }

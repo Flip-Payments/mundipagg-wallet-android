@@ -35,7 +35,7 @@ public class DeleteActivity extends DemoBaseActivity implements CreditCardListCa
     @Override
     protected void modifyViews() {
         super.modifyViews();
-        new CreditCardServiceLayer(this).getAllCreditCards(this);
+        new CreditCardServiceLayer().getAllCreditCards(this);
     }
 
     @Override
@@ -50,11 +50,6 @@ public class DeleteActivity extends DemoBaseActivity implements CreditCardListCa
         creditCardListView.setOnItemClickListener(this);
     }
 
-    @Override
-    public void responseServerError(CreditCardListResponse object, Response<CreditCardListResponse> response) {
-        toast("CLIENT ERROR" + response.code());
-
-    }
 
     @Override
     public void onError(Throwable t) {
@@ -88,17 +83,12 @@ public class DeleteActivity extends DemoBaseActivity implements CreditCardListCa
     }
 
     private void deleteCard(int position) {
-        new CreditCardServiceLayer(this).delete(creditCardListResponse.getData().get(position).getId(), new DeleteCreditCardCallback() {
+        new CreditCardServiceLayer().delete(creditCardListResponse.getData().get(position).getId(), new DeleteCreditCardCallback() {
 
             @Override
             public void onSuccess(CreditCardDeleteResponse response) {
                 toast("Cartão deletado");
-                new CreditCardServiceLayer(DeleteActivity.this).getAllCreditCards(DeleteActivity.this);
-            }
-
-            @Override
-            public void responseServerError(CreditCardDeleteResponse object, Response<CreditCardDeleteResponse> response) {
-                toast("CLIENT ERROR");
+                new CreditCardServiceLayer().getAllCreditCards(DeleteActivity.this);
             }
 
             @Override

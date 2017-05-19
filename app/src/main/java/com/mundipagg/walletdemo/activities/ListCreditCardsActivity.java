@@ -28,7 +28,7 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
     @Override
     protected void modifyViews() {
         super.modifyViews();
-        new CreditCardServiceLayer(this).getAllCreditCards(this);
+        new CreditCardServiceLayer().getAllCreditCards(this);
     }
 
     @Override
@@ -39,12 +39,6 @@ public class ListCreditCardsActivity extends DemoBaseActivity implements CreditC
             cards.add(format("%s\n**** **** **** %s (%s)", creditCardFromList.getHolderName(), creditCardFromList.getLastFourDigits(), creditCardFromList.getBrand()));
 
         creditCardListView.setAdapter(new EasyAdapter<>(this, SimpleListAdapter.class, cards));
-    }
-
-    @Override
-    public void responseServerError(CreditCardListResponse object, Response<CreditCardListResponse> response) {
-        toast("CLIENT ERROR" + response.code());
-
     }
 
     @Override

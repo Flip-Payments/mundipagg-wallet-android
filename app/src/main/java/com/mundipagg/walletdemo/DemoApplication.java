@@ -14,7 +14,7 @@ public class DemoApplication extends CorePermissionsApplication {
     public void onCreate() {
         super.onCreate();
 
-        MundipaggWallet.init("token");
-        MundipaggAccount.getInstance().setCustomerId("customer_id");
+        MundipaggWallet.init(null); //token
+        MundipaggAccount.getInstance().setCustomerId(null);//customer_id
     }
 }
