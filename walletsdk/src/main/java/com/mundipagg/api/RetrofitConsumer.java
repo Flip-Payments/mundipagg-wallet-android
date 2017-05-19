@@ -55,7 +55,6 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
                 retrofitCallback.onError(t);
                 t.printStackTrace();
             }
-
         });
     }
 }
