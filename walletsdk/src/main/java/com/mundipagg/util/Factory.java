@@ -23,7 +23,6 @@ import static retrofit2.converter.gson.GsonConverterFactory.create;
 public class Factory {
 
     public static Retrofit createRetrofit() {
-
         // create interceptor to show all request and response in log (for debug)
         Builder builder = new Builder();
         builder.readTimeout(60, SECONDS);
