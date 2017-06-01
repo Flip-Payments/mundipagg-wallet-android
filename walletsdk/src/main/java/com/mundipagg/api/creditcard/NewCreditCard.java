@@ -8,15 +8,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class NewCreditCard extends CreditCardModel {
 
-    @SerializedName("number") private String number;
-    @SerializedName("cvv")    private String securityCode;
+    @SerializedName("number")
+    private String number;
+    @SerializedName("cvv")
+    private String securityCode;
+    @SerializedName("options")
+    private Options options;
+
+    public NewCreditCard() {
+        options = new Options();
+    }
 
     public String getNumber() {
         return number;
     }
 
     public void setNumber(String number) {
-        this.number = number.replaceAll("\\s+","");
+        this.number = number.replaceAll("\\s+", "");
     }
 
     public String getSecurityCode() {
@@ -25,5 +33,9 @@ public class NewCreditCard extends CreditCardModel {
 
     public void setSecurityCode(String securityCode) {
         this.securityCode = securityCode;
+    }
+
+    public void verifyCard(boolean isToVerify) {
+        options.setVerifyCard(isToVerify);
     }
 }

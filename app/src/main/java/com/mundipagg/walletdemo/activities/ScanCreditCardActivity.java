@@ -14,7 +14,6 @@ import com.mundipagg.walletdemo.R;
 
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
-import retrofit2.Response;
 
 @InjectLayout(layout = R.layout.activity_scan_credit_card)
 public class ScanCreditCardActivity extends DemoBaseActivity implements CreateCreditCardCallback {
@@ -53,6 +52,7 @@ public class ScanCreditCardActivity extends DemoBaseActivity implements CreateCr
                 newCreditCard.setExpMonth(scanResult.expiryMonth);
                 newCreditCard.setExpYear(scanResult.expiryYear);
                 newCreditCard.setHolderName(scanResult.cardholderName);
+                newCreditCard.verifyCard(true);
 
                 BillingAddress address = new BillingAddress();
                 address.setStreet("Malibu Point");
@@ -83,6 +83,7 @@ public class ScanCreditCardActivity extends DemoBaseActivity implements CreateCr
 
     @Override
     public void onError(Throwable t) {
+        t.printStackTrace();
         toast("HUGE ERROR");
         killThisActivity();
     }
