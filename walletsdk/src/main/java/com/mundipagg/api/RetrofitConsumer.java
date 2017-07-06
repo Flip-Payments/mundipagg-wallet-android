@@ -4,6 +4,7 @@ import com.mundipagg.MundipaggAccount;
 import com.mundipagg.api.exceptions.CardVerificationException;
 import com.mundipagg.api.interfaces.RetrofitCallback;
 import com.mundipagg.api.interfaces.RetrofitExecutableInterface;
+import com.mundipagg.exceptions.UnauthorizedException;
 import com.mundipagg.util.Factory;
 
 import retrofit2.Call;
@@ -33,7 +34,6 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
         return retrofit;
     }
 
-
     public void setExecutable(Call<T> api) {
         this.api = api;
     }
@@ -52,10 +52,12 @@ public final class RetrofitConsumer<T> implements RetrofitExecutableInterface<T>
                     retrofitCallback.onSuccess(response.body());
                 } else if (response.code() == 412) {
                     retrofitCallback.onError(new CardVerificationException("Could not create credit card. The card verification failed."));
+                } else if (response.code() == 401) {
+                    retrofitCallback.onError(new UnauthorizedException());
                 } else {
                     retrofitCallback.onError(new Throwable(response.message()));
                 }
-                
+
             }
 
             @Override
