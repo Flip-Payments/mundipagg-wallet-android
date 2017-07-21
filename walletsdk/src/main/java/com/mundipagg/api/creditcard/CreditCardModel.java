@@ -12,6 +12,7 @@ public abstract class CreditCardModel {
     @SerializedName("exp_month")        private int    expMonth;
     @SerializedName("exp_year")         private int    expYear;
     @SerializedName("billing_address")  private BillingAddress billingAddress;
+    @SerializedName("holder_document")  private String holderDocument;
 
     public String getHolderName() {
         return holderName;
@@ -43,5 +44,13 @@ public abstract class CreditCardModel {
 
     public void setBillingAddress(BillingAddress billingAddress) {
         this.billingAddress = billingAddress;
+    }
+
+    public String getHolderDocument() {
+        return holderDocument;
+    }
+
+    public void setHolderDocument(String holderDocument) {
+        this.holderDocument = holderDocument;
     }
 }

@@ -13,5 +13,6 @@ public enum CreditCardBrand {
     Amex,
     Aura,
     Elo,
-    Hipercard
+    Hipercard,
+    Sodexo
 }
