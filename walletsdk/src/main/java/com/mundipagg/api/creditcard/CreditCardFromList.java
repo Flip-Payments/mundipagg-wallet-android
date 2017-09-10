@@ -11,7 +11,7 @@ public class CreditCardFromList extends CreditCardModel {
     @SerializedName("id")               private String id;
     @SerializedName("gateway_id")       private String gatewayId;
     @SerializedName("last_four_digits") private String lastFourDigits;
-    @SerializedName("brand")            private CreditCardBrand brand;
+    @SerializedName("brand")            private String brand;
     @SerializedName("status")           private String status;
     @SerializedName("created_at")       private String createdAt;
     @SerializedName("updated_at")       private String updatedAt;
@@ -40,11 +40,11 @@ public class CreditCardFromList extends CreditCardModel {
         this.lastFourDigits = lastFourDigits;
     }
 
-    public CreditCardBrand getBrand() {
+    public String getBrand() {
         return brand;
     }
 
-    public void setBrand(CreditCardBrand brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 

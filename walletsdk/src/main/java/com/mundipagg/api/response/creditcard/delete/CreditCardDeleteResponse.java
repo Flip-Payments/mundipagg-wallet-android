@@ -18,7 +18,7 @@ public class CreditCardDeleteResponse extends ResponseBase {
     @SerializedName("last_four_digits")
     private String lastFourDigits;
     @SerializedName("brand")
-    private CreditCardBrand brand;
+    private String brand;
     @SerializedName("status")
     private String status;
     @SerializedName("created_at")
@@ -56,11 +56,11 @@ public class CreditCardDeleteResponse extends ResponseBase {
         this.lastFourDigits = lastFourDigits;
     }
 
-    public CreditCardBrand getBrand() {
+    public String getBrand() {
         return brand;
     }
 
-    public void setBrand(CreditCardBrand brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 

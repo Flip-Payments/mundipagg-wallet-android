@@ -2,18 +2,26 @@ package com.mundipagg.api.creditcard;
 
 import java.io.Serializable;
 
-/**
- * Created by JGabrielFreitas on 25/10/16.
- */
 public enum CreditCardBrand implements Serializable {
-    Jcb,
-    Diners,
-    Discover,
-    Mastercard,
-    Visa,
-    Amex,
-    Aura,
-    Elo,
-    Hipercard,
-    Sodexo
+    JCB,
+    DINERS,
+    DISCOVER,
+    MASTERCARD,
+    VISA,
+    AMEX,
+    AURA,
+    ELO,
+    HIPERCARD,
+    SODEXO,
+    ALELO,
+    TICKET,
+    UNKNOWN;
+    public static CreditCardBrand getBrandByText(String value) {
+        for (CreditCardBrand category : values()) {
+            if (category.toString().equalsIgnoreCase(value)) {
+                return category;
+            }
+        }
+        return UNKNOWN;
+    }
 }
