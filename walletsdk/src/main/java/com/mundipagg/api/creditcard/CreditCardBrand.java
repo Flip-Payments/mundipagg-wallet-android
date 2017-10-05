@@ -15,6 +15,7 @@ public enum CreditCardBrand implements Serializable {
     SODEXO,
     ALELO,
     TICKET,
+    VR,
     UNKNOWN;
     public static CreditCardBrand getBrandByText(String value) {
         for (CreditCardBrand category : values()) {
