@@ -18,17 +18,17 @@ Com essa SDK você poderá:
 Adicione o artifactory no `/build.gradle` raíz
 
 ```gradle
-    allprojects {
-        repositories {
-            jcenter()
-           maven { url "https://jitpack.io" }
-        }
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
     }
+}
 ```
 
 E no seu `app/build.gradle`
 ```gradle
-    // wallet sdk
-     compile 'com.github.flip-Payments:mundipagg-wallet-android:x.x.x'
+// wallet sdk
+compile 'com.github.flip-Payments:mundipagg-wallet-android:x.x.x'
 ```
 
