@@ -33,7 +33,7 @@ public class Factory {
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request()
                         .newBuilder()
-                        .header("Authorization", "Bearer " + MundipaggAccount.getInstance().getAccessToken())
+                        .header("Authorization", "Basic " + MundipaggAccount.getInstance().getAccessToken())
                         .method(chain.request().method(), chain.request().body())
                         .build();
                 return chain.proceed(request);
